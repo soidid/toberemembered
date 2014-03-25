@@ -42,12 +42,12 @@ taiwanControllers.controller('indexCtrl', ['$scope', '$http','$location', '$fire
   $scope.toggleForm = function(event){
     //console.log(event.target);
     if($scope.showForm){
-       $("#form").slideUp();
+       $("#form").hide();
        $scope.showForm = false;
        $(event.target).removeClass('active');
 
     }else{
-        $("#form").slideDown();
+        $("#form").show();
         $scope.showForm = true;
         $(event.target).addClass('active');
        
