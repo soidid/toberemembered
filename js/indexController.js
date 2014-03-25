@@ -19,7 +19,7 @@ taiwanControllers.controller('indexCtrl', ['$scope', '$http','$location', '$fire
   });*/
   $scope.data = [];
   function addItem($scope, it) {
-   console.log(it);
+   //console.log(it);
    setTimeout(function(){$scope.$apply(function() {$scope.data.unshift(it);});}, 0);
   }
   $scope.dbRef.on("child_added", function(d) {
