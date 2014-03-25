@@ -1,0 +1,66 @@
+<div class="wrapper">
+<center>
+<div class="ui small button" ng-click="toggleForm($event)" id="button">
+ 分享 / 撰寫
+</div>
+</center>
+
+<div class="ui small form segment" id="form" ng-show="showForm">
+  <div class="four fields">
+    <div class="field">
+      <label>姓名</label>
+      <input placeholder="" type="text"  ng-model="newData.name">
+    </div>
+    <div class="field">
+      <label>你是誰</label>
+      <input placeholder="例如：醫療小組成員、大學生" type="text"  ng-model="newData.aka">
+    </div>
+    <div class="field">
+      <label>撰文日期</label>
+      <input placeholder="例如：2014/03/24" type="text"  ng-model="newData.post_date">
+    </div>
+    <div class="field">
+      <label>撰文時間</label>
+      <input placeholder="例如：08:03" type="text"  ng-model="newData.post_time">
+    </div>
+  </div>
+  <div class="one field">
+    <div class="field">
+      <label>你的故事（可節錄）</label>
+      <textarea placeholder="寫出你的故事，你的經歷，你的所見所聞。" type="text"
+       ng-model="newData.content"></textarea>
+    </div>
+    <div class="field">
+      <label>連結</label>
+      <input placeholder="例如：www.facebook.com/post-id" type="text"  ng-model="newData.link">
+    </div>
+  </div>
+  <div class="ui black right floated small submit button" 
+       ng-click="submit()">張貼</div>
+</div>
+
+</div>
+<!-- ///////////////////////////////////////////////////////////// -->
+
+        
+     
+<div class="wrapper">       
+
+<div class="ui raised segment">
+<div class="ui items">
+  <div class="item" ng-repeat="d in data">
+    <div class="content">
+      <div class="meta">{{d.post_date}} {{d.post_time}}</div>
+      <div class="name">{{d.name}}</div>
+      <div class="description">
+        <div class="des-p" ng-repeat="p in d.content">{{p}}</div>
+        <div class="des-meta" ng-show="d.aka"><br/>（{{d.aka}}）</div>
+      </div>
+      <p><a class="link" target="_blank" href="{{d.link}}">連結</a></p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div> <!-- end of wrapper -->
